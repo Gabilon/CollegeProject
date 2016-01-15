@@ -27,6 +27,9 @@
     <!-- IN TO CA BLE -->
     <script>
 
+        //MoviesData
+
+
     //EmployeeData
     var employees = [{
         "ID": 1,
@@ -336,7 +339,9 @@
     "Send Receipts for all Flights Last Month"];
 
     //MenuData
-    var menuData = [{
+    var menuData = [
+
+   {
         id: "1",
         text: "Employees",
         items: [{
@@ -364,10 +369,19 @@
             text: "Department List",
             ider: 4
         }]
+    },
+        {
+            id: "4",
+            text: "Login",
+            items: [{
+                id: "4_1",
+                text: "Sign in",
+                ider: 5
+            }]
     }];
 
 
-    var chart = [{
+    var chartData = [{
         country: "USA",
         hydro: 59.8,
         oil: 937.6,
@@ -433,6 +447,8 @@
         $(".options > #showNavButtons").hide();
         $(".options > #showIndicator").hide();
 
+        $("#logInButton").hide();
+
         //Menu
         var dxMenu = $("#menu").dxMenu({
             dataSource: menuData,
@@ -447,6 +463,7 @@
                         $(".options > #showNavButtons").hide();
                         $(".options > #showIndicator").hide();
                         $(".employeeNotes").hide();
+                        $("#logInButton").hide();
 
                         $("#product-details > #gridContainer").show()
 
@@ -463,6 +480,7 @@
                         $(".options > #showNavButtons").hide();
                         $(".options > #showIndicator").hide();
                         $(".employeeNotes").hide();
+                        $("#logInButton").hide();
 
                         $("#product-details > #gridContainer1").show();
                         $("#product-details > #name").text(item.text).show();
@@ -478,7 +496,7 @@
                     $(".options > #slideShow").hide();
                     $(".options > #showNavButtons").hide();
                     $(".options > #showIndicator").hide();
-
+                    $("#logInButton").hide();
 
                     $("#product-details > #gridContainer2").show();
                     $(".employeeNotes").show();
@@ -490,12 +508,33 @@
                     $("#product-details > #gridContainer2").hide();
                     $("#product-details > #name").text(item.text).hide();
                     $(".employeeNotes").hide();
+                    $("#logInButton").hide();
 
                     $(".gallery-container > #gallery").show();
                     $(".options > #useLoop").show();
                     $(".options > #slideShow").show();
                     $(".options > #showNavButtons").show();
                     $(".options > #showIndicator").show();
+                }
+
+                if (item.ider == 5){
+
+                    $("#product-details > #gridContainer").hide();
+                    $("#product-details > #name").text(item.text).hide();
+                    $("#product-details > #gridContainer1").hide();
+                    $("#product-details > #gridContainer2").hide();
+                    $(".employeeNotes").hide();
+
+                    $(".gallery-container > #gallery").hide();
+                    $(".options > #useLoop").hide();
+                    $(".options > #slideShow").hide();
+                    $(".options > #showNavButtons").hide();
+                    $(".options > #showIndicator").hide();
+
+                    $("#logInButton").show();
+
+
+
                 }
             }
         }).dxMenu("instance");
@@ -505,9 +544,14 @@
         //GridContainer to show(or hide)
         $("#product-details > #gridContainer").dxDataGrid({
             dataSource: employees,
+            selection: { mode: "single" },
             paging: {
-                enabled: false
+                enabled: true
             },
+            searchPanel: {
+                visible: true
+            },
+            
             editing: {
                 mode: "row",
                 allowUpdating: true,
@@ -518,26 +562,21 @@
                 {
                     dataField: "Prefix",
                     caption: "Title",
-                    width: 70
                 },
                 {
                     dataField: "FirstName",
                     caption: "First Name",
-                    width: 100
                 },
      {
          dataField: "LastName",
          caption: "Last Name",
-         width: 100
 
      }, {
          dataField: "Position",
          caption: "Courses",
-         width: 130
      }, {
          dataField: "StateID",
          caption: "Department",
-         width: 125,
          lookup: {
              dataSource: states,
              displayExpr: "Name",
@@ -546,7 +585,6 @@
      }, {
          dataField: "HireDate",
          dataType: "date",
-         width: 70
      },
             ],
             onEditingStart: function (e) {
@@ -572,6 +610,19 @@
             },
             onRowRemoved: function (e) {
                 logEvent("RowRemoved");
+            },
+            onSelectionChanged: function (selectedItems) {
+
+                var data = selectedItems.selectedRowsData[0];
+                if (data) {
+                    $(".employeeName").text(data.FirstName + " " + data.LastName || "");
+                    $(".birth-date").text(data.BirthDate || "");
+                    $(".city").text(data.City || "");
+                    $(".zipcode").text(data.Zipcode || "");
+                    $(".address-info").text(data.Address || "");
+                    $(".mobile-phone").text(data.Phone || "");
+                    $(".email").text(data.CompanyName || "");
+                }
             }
         });
 
@@ -613,6 +664,7 @@
                     groupIndex: 0
                 }
             ]
+            
         }).dxDataGrid("instance");
 
         $("#autoExpand").dxCheckBox({
@@ -703,9 +755,11 @@
 
         var x = 0;
 
-        var showEmployeeInfo = function (employees) {
-            $(".employeeName").text(employees[x].FirstName + " " + employees[x].LastName|| "");
-            $(".birth-date").text(employees[x].BirthDate || "");
+        var showEmployeeInfo = function (item) {
+            //var dataGrid = $('#gridContainer').dxDataGrid('instance');
+            //var item = dataGrid.getSelectedRowsData()
+            $(".employeeName").text(item.FirstName + " " + item.LastName|| "");
+            $(".birth-date").text(item.Courses || "");
             $(".city").text(employees[x].City || "");
             $(".zipcode").text(employees[x].Zipcode || "");
             $(".address-info").text(employees[x].Address || "");
@@ -734,7 +788,9 @@
                 }, 3000);
             },
             onHidden: function () {
-                showEmployeeInfo(employees);
+                var dataGrid = $('#gridContainer').dxDataGrid('instance');
+                var item = dataGrid.getSelectedRowsData()
+                showEmployeeInfo(item);
             }
         }).dxLoadPanel("instance");
 
@@ -856,47 +912,8 @@
 
       }).dxCheckBox("instance");
 
-
-
-
-        //SquareBox
-        var currentDevice = "xs", devices = [
-    { id: "xs", text: "Phone" },
-    { id: "md", text: "Tablet" },
-    { id: "lg", text: "Web" }];
-
-        $("#responsive-box").dxResponsiveBox({
-            rows: [
-                { ratio: 1 },
-                { ratio: 2 },
-                { ratio: 2, screen: "sm md" },
-                { ratio: 1 }
-            ],
-            cols: [
-                { ratio: 1 },
-                { ratio: 2, screen: "lg" },
-                { ratio: 1 }
-            ],
-            screenByWidth: function () {
-                return currentDevice;
-            },
-            height: 400
-        });
-
-        $("#radio-group").dxRadioGroup({
-            items: devices,
-            layout: "horizontal",
-            value: devices[0],
-            onValueChanged: function (e) {
-                currentDevice = e.value.id;
-                $("#responsive-box").dxResponsiveBox("instance").repaint();
-            }
-        });
-
-
-
         var chartOptions = {
-            dataSource: chart,
+            dataSource: chartData,
             commonSeriesSettings: {
                 argumentField: "country",
                 type: types[0]
@@ -949,6 +966,174 @@
             }
         });
 
+
+        //Button for Loggin
+        $("#logInButton").dxButton({
+            text: "Log in",
+            onClick: function(){
+                $("#popup").dxPopup("instance").show();
+                $("#address").dxTextBox({
+                    value: '424 N Main St.'
+                }).show();
+            }
+        });
+
+        
+        $("#popup").dxPopup({
+            showTitle: true,
+            title: 'Create a Free Account',
+            dragEnabled: false,
+            closeOnOutsideClick: true
+        });
+
+
+        var scheduler = $(".scheduler").dxScheduler({
+            dataSource: data,
+            views: ["week", "day", "timelineDay"],
+            currentView: "timelineDay",
+            currentDate: new Date(2015, 4, 25),
+            firstDayOfWeek: 0,
+            startDayHour: 9,
+            endDayHour: 23,
+            showAllDayPanel: false,
+            width: "100%",
+            height: 600,
+            groups: ["theatreId"],
+            horizontalScrollingEnabled: true,
+            cellDuration: 20,
+            editing: {
+                allowAdding: false
+            },
+            resources: [{
+                field: "movieId",
+                dataSource: moviesData,
+                useColorAsDefault: true
+            }, {
+                field: "theatreId",
+                dataSource: theatreData
+            }],
+            appointmentTooltipTemplate: function (data, container) {
+                var markup = getTooltipTemplate(getMovieById(data.movieId));
+                markup.find(".edit").dxButton({
+                    text: "Edit details",
+                    onClick: function () {
+                        scheduler.showAppointmentPopup(data, false);
+                    }
+                });
+                return markup;
+            },
+            appointmentTemplate: function (data) {
+                var movieInfo = getMovieById(data.movieId) || {};
+
+                return $("<div class='showtime-preview'>" +
+                            "<div>" + movieInfo.text + "</div>" +
+                            "<div>Ticket Price: <strong>" +
+                                prices[data.price - 1].text + "</strong>" +
+                            "</div>" +
+                            "<div>" + Globalize.format(data.startDate, 'hh:mm tt') +
+                                " - " + Globalize.format(data.endDate, 'hh:mm tt') +
+                            "</div>" +
+                         "</div>");
+
+            },
+            onAppointmentFormCreated: function (data) {
+                var form = data.form,
+                    movieInfo = getMovieById(data.appointmentData.movieId) || {},
+                    startDate = data.appointmentData.startDate;
+
+                form.option("items", [{
+                    label: {
+                        text: "Movie"
+                    },
+                    editorType: "dxSelectBox",
+                    dataField: "movieId",
+                    editorOptions: {
+                        items: moviesData,
+                        displayExpr: "text",
+                        valueExpr: "id",
+                        value: data.appointmentData.movieId,
+                        onValueChanged: function (args) {
+                            movieInfo = getMovieById(args.value);
+                            form.getEditor("director")
+                                .option("value", movieInfo.director);
+                            form.getEditor("endDate")
+                                .option("value", new Date(startDate.getTime() +
+                                    60 * 1000 * movieInfo.duration));
+                        }
+                    },
+                }, {
+                    label: {
+                        text: "Director"
+                    },
+                    name: "director",
+                    editorType: "dxTextBox",
+                    editorOptions: {
+                        value: movieInfo.director,
+                        readOnly: true
+                    },
+                }, {
+                    dataField: "startDate",
+                    editorType: "dxDateBox",
+                    editorOptions: {
+                        value: startDate,
+                        format: "datetime",
+                        onValueChanged: function (args) {
+                            startDate = args.value;
+                            form.getEditor("endDate")
+                                .option("value", new Date(startDate.getTime() +
+                                    60 * 1000 * movieInfo.duration));
+                        }
+                    }
+                }, {
+                    name: "endDate",
+                    dataField: "endDate",
+                    editorType: "dxDateBox",
+                    editorOptions: {
+                        value: data.appointmentData.endDate,
+                        format: "datetime",
+                        readOnly: true
+                    }
+                }, {
+                    dataField: "price",
+                    editorType: "dxRadioGroup",
+                    editorOptions: {
+                        dataSource: prices,
+                        displayExpr: "text",
+                        valueExpr: "id",
+                        value: data.appointmentData.price
+                    }
+                }
+                ]);
+            }
+        }).dxScheduler("instance");
+
+        function getMovieById(id) {
+            for (var i = 0; i < moviesData.length; i++) {
+                if (moviesData[i].id === id)
+                    return moviesData[i];
+            }
+            return null;
+        }
+
+        function getTooltipTemplate(movieData) {
+            return $("<div class='movie-tooltip'>" +
+                        "<img src='" + movieData.image + "' />" +
+                        "<div class='movie-info'>" +
+                            "<div class='movie-title'>" +
+                                movieData.text + " (" + movieData.year + ")" +
+                            "</div>" +
+                            "<div>" +
+                                "Director: " + movieData.director +
+                            "</div>" +
+                            "<div>" +
+                                "Duration: " + movieData.duration + " minutes" +
+                            "</div>" +
+                        "</div><br />" +
+                        "<div class='edit'></div>" +
+                     "</div>");
+        }
+
+
     });
 
     </script>
@@ -962,6 +1147,7 @@
                 <div id="name"></div>
                 <br />
                 <div id="gridContainer"> </div>
+
                 <div id="gridContainer1"></div>
                 <div id="eventContainer"> </div>
 
@@ -984,13 +1170,26 @@
                     <div id="showIndicator"></div>
                 </div>
 
+                <!--Button Field for LogIn-->
+                <div class="dx-fieldset">
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div id="logInButton"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="popup">
+                </div>
+
+                <!--Sheduler-->
+                <div class="scheduler"></div>
+
                 <!--Load Data controller-->
                 <div id="container">
 
                     <h1>Employee: <b class="employeeName"></b></h1>
-
-                    <div class="show-panel"></div>
-
+              
                     <div id="employees">
                         <p>
                             Birth date: <b class="birth-date"></b>
@@ -1010,13 +1209,6 @@
 
                     <div class="loadpanel"></div>
 
-                    <div class="options">
-                        <h2>Options:</h2>
-                        <div class="with-indicator"></div>
-                        <div class="with-overlay"></div>
-                        <div class="with-pane"></div>
-                        <div class="outside-click"></div>
-                    </div>
                 </div>
                 
                 <!--List-->

@@ -5,7 +5,7 @@
 
 
 .label {
-    font-size: 22px;
+    font-size: 50px;
 }
 
 #product-details {
@@ -15,13 +15,13 @@
 
 #product-details > #gridContainer {
     height: auto;
-    width: auto;
+    width: 100%;
 
 }
 
 #product-details > #eventContainer {
     height: auto;
-    width: auto;
+    width: 100%;
 
 }
 
@@ -74,6 +74,8 @@
     display: block;
     margin-bottom: 5px;
 }
+
+
 
 /*Panel Uploader*/
 #container h1 {
@@ -173,4 +175,69 @@
 #container1 > center > div {
     display: inline-block;
     vertical-align: middle;
+}
+
+
+/*This is a view for a button and a pop css*/
+#logInButton {
+   margin-right: 1000px;
+}
+
+#popup {
+    padding: 10px;
+}
+
+#popup ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#popup ul li {
+    display: inline-block;
+    width: 160px;
+    margin: 10px;
+}
+
+#popup ul li img{
+    width: 100px;
+}
+
+.button-info {
+    margin: 10px;
+}
+
+.popup p {
+    margin-bottom: 10px;
+}
+
+/*Sechudler*/
+.showtime-preview > div:first-child {
+    font-size: 12px;
+    white-space: normal;
+}
+
+.showtime-preview > div:not(:first-child) {
+    font-size: 11px;
+    white-space: normal;
+}
+
+.movie-tooltip {
+    width: 270px;
+}
+
+.movie-tooltip .movie-info {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.movie-tooltip img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.movie-tooltip .movie-title {
+    font-size: 1.5em;
+    line-height: 40px;
 }
