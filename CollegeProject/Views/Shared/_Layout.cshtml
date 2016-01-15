@@ -622,6 +622,7 @@
             }
         });
 
+        //GridContainer2 (Courses)
         $("#product-details > #gridContainer2").dxDataGrid({
             dataSource: states,
             selection: {
@@ -700,14 +701,17 @@
 
         };
 
+        var x = 0;
+
         var showEmployeeInfo = function (employees) {
-            $(".employeeName").text(employees[1].FirstName || "");
-            $(".birth-date").text(employees[0].BirthDate || "");
-            $(".city").text(employees[0].City || "");
-            $(".zipcode").text(employees[0].Zipcode || "");
-            $(".address-info").text(employees[0].Address || "");
-            $(".mobile-phone").text(employees[0].Phone || "");
-            $(".email").text(employees[0].CompanyName || "");
+            $(".employeeName").text(employees[x].FirstName + " " + employees[x].LastName|| "");
+            $(".birth-date").text(employees[x].BirthDate || "");
+            $(".city").text(employees[x].City || "");
+            $(".zipcode").text(employees[x].Zipcode || "");
+            $(".address-info").text(employees[x].Address || "");
+            $(".mobile-phone").text(employees[x].Phone || "");
+            $(".email").text(employees[x].CompanyName || "");
+            x = x + 1;
         };
 
         $(".show-panel").dxButton({
@@ -805,6 +809,7 @@
                 listWidget.option("allowItemDeleting", data.value);
                 deleteTypeChooser.option("disabled", !data.value);
                 $("#simple").dxButton("instance").option("disabled", !data.value);
+                checkAll.$("#allowSelectAllCheckbox").dxCheckBox("instance").option("disabled", !data.value);
 
             }
         });
@@ -823,6 +828,18 @@
             disabled: true,
             text: "Delete All"
         });
+
+        //Checkbox to select all the elements in the list 
+        var checkAll = $("#allowSelectAllCheckbox").dxCheckBox({
+            value: false,
+            disabled: true,
+            onValueChanged: function (info) {
+                var dataGrid = $("#simpleList").dxList('instance');
+                dxList.option({
+                    selection: { allowSelectAll: !info.value }
+                })
+            }
+      });
 
 
 
@@ -993,6 +1010,13 @@
                         <div class="dx-field-label">Allow deleting:</div>
                         <div class="dx-field-value">
                             <div id="allowEditing"></div>
+                        </div>
+                    </div>
+                    <!--New Element to check all lists-->
+                    <div class="dx-field">
+                        <div class="dx-field-label">Check All</div>
+                        <div class="dx-field-value">
+                            <div id="allowSelectAllCheckbox"></div>
                         </div>
                     </div>
                     <div class="dx-field">
