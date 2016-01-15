@@ -782,6 +782,7 @@
             itemDeleteMode: "toggle",
             showSelectionControls: true,
             selectionMode: "multi",
+            showSelectionControls: false, 
             onSelectionChanged: function (data) {
                 selectedItems = $.map(selectedItems, function (item) {
                     if (data.removedItems.indexOf(item) == -1)
@@ -809,7 +810,7 @@
                 listWidget.option("allowItemDeleting", data.value);
                 deleteTypeChooser.option("disabled", !data.value);
                 $("#simple").dxButton("instance").option("disabled", !data.value);
-                checkAll.$("#allowSelectAllCheckbox").dxCheckBox("instance").option("disabled", !data.value);
+                $("#allowSelectAllCheckbox").dxCheckBox("instance").option("disabled", !data.value);
 
             }
         });
@@ -833,12 +834,11 @@
         var checkAll = $("#allowSelectAllCheckbox").dxCheckBox({
             value: false,
             disabled: true,
-            onValueChanged: function (info) {
-                var dataGrid = $("#simpleList").dxList('instance');
-                dxList.option({
-                    selection: { allowSelectAll: !info.value }
-                })
+            onValueChanged: function (e) {
+                //I think the "e" is the opposite!
+                $("#simpleList").dxList("instance").option("showSelectionControls", e.value)
             }
+            
       });
 
 
