@@ -211,37 +211,17 @@
 }
 
 /*Sechudler*/
-.showtime-preview > div:first-child {
+.dx-scheduler-work-space-week .dx-scheduler-appointment-content {  
     font-size: 12px;
-    white-space: normal;
+}
+​
+.dx-scheduler-work-space .dx-scheduler-header-panel-cell {
+    font-size: 16px;
 }
 
-.showtime-preview > div:not(:first-child) {
-    font-size: 11px;
-    white-space: normal;
+.dx-scheduler-navigator .dx-widget {
+    
 }
-
-.movie-tooltip {
-    width: 270px;
-}
-
-.movie-tooltip .movie-info {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: top;
-    text-align: left;
-}
-
-.movie-tooltip img {
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-.movie-tooltip .movie-title {
-    font-size: 1.5em;
-    line-height: 40px;
-}
-
 /*Grouped Field Forms*/
 #form-container {
 	margin: 10px;
@@ -278,4 +258,12 @@
 
 .dx-selectbox {
     margin: 10px;
+}
+
+/*Tabs*/
+.tabContent {
+    padding: 20px;
+    height: 200px;
+    margin: 20px;
+    border: 1px solid;
 }

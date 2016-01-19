@@ -27,8 +27,6 @@
     <!-- IN TO CA BLE -->
     <script>
 
-        //MoviesData
-
 
     //EmployeeData
     var employees = [{
@@ -427,1121 +425,100 @@
 
     var types = ["line", "stackedLine", "fullStackedLine"];
 
-    var moviesData = [{
-        id: 1,
-        text: "His Girl Friday",
-        director: "Howard Hawks",
-        year: "1940",
-        image: "images/movies/HisGirlFriday.jpg",
-        duration: 92,
-        color: "#cb6bb2"
+    var data = [
+    {
+        text: "Website Re-Design Plan",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 25, 9, 0),
+        endDate: new Date(2015, 4, 25, 11, 30)
     }, {
-        id: 2,
-        text: "Royal Wedding",
-        director: "Stanley Donen",
-        year: "1951",
-        image: "images/movies/RoyalWedding.jpg",
-        duration: 93,
-        color: "#56ca85"
+        text: "Book Flights to San Fran for Sales Trip",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 25, 12, 0),
+        endDate: new Date(2015, 4, 25, 13, 0)
     }, {
-        id: 3,
-        text: "A Star Is Born",
-        director: "William A. Wellman",
-        year: "1937",
-        image: "images/movies/AStartIsBorn.jpg",
-        duration: 111,
-        color: "#1e90ff"
+        text: "Install New Router in Dev Room",
+        priorityId: 1,
+        startDate: new Date(2015, 4, 25, 14, 30),
+        endDate: new Date(2015, 4, 25, 15, 30)
     }, {
-        id: 4,
-        text: "The Screaming Skull",
-        director: "Alex Nicol",
-        year: "1958",
-        image: "images/movies/ScreamingSkull.jpg",
-        duration: 68,
-        color: "#ff9747"
+        text: "Approve Personal Computer Upgrade Plan",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 26, 10, 0),
+        endDate: new Date(2015, 4, 26, 11, 0)
     }, {
-        id: 5,
-        text: "It's a Wonderful Life",
-        director: "Frank Capra",
-        year: "1946",
-        image: "images/movies/ItsAWonderfulLife.jpg",
-        duration: 130,
-        color: "#f05797"
+        text: "Final Budget Review",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 26, 12, 0),
+        endDate: new Date(2015, 4, 26, 13, 35)
     }, {
-        id: 6,
-        text: "City Lights",
-        director: "Charlie Chaplin",
-        year: "1931",
-        image: "images/movies/CityLights.jpg",
-        duration: 87,
-        color: "#2a9010"
-    }];
-
-    var prices = [{
-        text: "$5",
-        id: 1
+        text: "New Brochures",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 26, 14, 30),
+        endDate: new Date(2015, 4, 26, 15, 45)
     }, {
-        text: "$10",
-        id: 2
+        text: "Install New Database",
+        priorityId: 1,
+        startDate: new Date(2015, 4, 27, 9, 45),
+        endDate: new Date(2015, 4, 27, 11, 15)
     }, {
-        text: "$15",
-        id: 3
+        text: "Approve New Online Marketing Strategy",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 27, 12, 0),
+        endDate: new Date(2015, 4, 27, 14, 0)
     }, {
-        text: "$20",
-        id: 4
-    }];
-
-    var theatreData = [{
-        text: "Tennis Court 1",
-        id: 0
+        text: "Upgrade Personal Computers",
+        priorityId: 1,
+        startDate: new Date(2015, 4, 27, 15, 15),
+        endDate: new Date(2015, 4, 27, 16, 30)
     }, {
-        text: "Tennis Court 2",
-        id: 1
+        text: "Prepare 2015 Marketing Plan",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 28, 11, 0),
+        endDate: new Date(2015, 4, 28, 13, 30)
     }, {
-        text: "Basketball Court 1",
-        id: 2
-        }
+        text: "Brochure Design Review",
+        priorityId: 1,
+        startDate: new Date(2015, 4, 28, 14, 0),
+        endDate: new Date(2015, 4, 28, 15, 30)
+    }, {
+        text: "Create Icons for Website",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 29, 10, 0),
+        endDate: new Date(2015, 4, 29, 11, 30)
+    }, {
+        text: "Upgrade Server Hardware",
+        priorityId: 1,
+        startDate: new Date(2015, 4, 29, 14, 30),
+        endDate: new Date(2015, 4, 29, 16, 0)
+    }, {
+        text: "Submit New Website Design",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 29, 16, 30),
+        endDate: new Date(2015, 4, 29, 18, 0)
+    }, {
+        text: "Launch New Website",
+        priorityId: 2,
+        startDate: new Date(2015, 4, 29, 12, 20),
+        endDate: new Date(2015, 4, 29, 14, 0)
+    }
     ];
 
-    var data = [{
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 9, 10),
-        endDate: new Date(2015, 4, 24, 11, 1)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 24, 11, 30),
-        endDate: new Date(2015, 4, 24, 13, 2)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 3,
-        startDate: new Date(2015, 4, 24, 13, 30),
-        endDate: new Date(2015, 4, 24, 15, 21)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 24, 16, 0),
-        endDate: new Date(2015, 4, 24, 17, 8)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 17, 30),
-        endDate: new Date(2015, 4, 24, 19, 3)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 19, 30),
-        endDate: new Date(2015, 4, 24, 21, 2)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 21, 20),
-        endDate: new Date(2015, 4, 24, 22, 53)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 25, 9, 10),
-        endDate: new Date(2015, 4, 25, 11, 20)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 12, 0),
-        endDate: new Date(2015, 4, 25, 13, 33)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 14, 0),
-        endDate: new Date(2015, 4, 25, 15, 51)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 16, 20),
-        endDate: new Date(2015, 4, 25, 17, 28)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 25, 18, 0),
-        endDate: new Date(2015, 4, 25, 19, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 3,
-        startDate: new Date(2015, 4, 25, 20, 0),
-        endDate: new Date(2015, 4, 25, 21, 33)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 21, 50),
-        endDate: new Date(2015, 4, 25, 22, 58)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 26, 9, 0),
-        endDate: new Date(2015, 4, 26, 10, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 26, 11, 0),
-        endDate: new Date(2015, 4, 26, 12, 33)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 26, 13, 20),
-        endDate: new Date(2015, 4, 26, 15, 11)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 26, 15, 45),
-        endDate: new Date(2015, 4, 26, 17, 55)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 26, 18, 20),
-        endDate: new Date(2015, 4, 26, 19, 28)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 4,
-        startDate: new Date(2015, 4, 26, 20, 0),
-        endDate: new Date(2015, 4, 26, 22, 10)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 9, 0),
-        endDate: new Date(2015, 4, 27, 10, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 11, 0),
-        endDate: new Date(2015, 4, 27, 12, 33)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 27, 13, 20),
-        endDate: new Date(2015, 4, 27, 15, 11)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 27, 15, 45),
-        endDate: new Date(2015, 4, 27, 17, 55)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 18, 20),
-        endDate: new Date(2015, 4, 27, 19, 28)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 27, 20, 0),
-        endDate: new Date(2015, 4, 27, 22, 10)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 9, 30),
-        endDate: new Date(2015, 4, 28, 11, 3)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 11, 30),
-        endDate: new Date(2015, 4, 28, 13, 2)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 13, 30),
-        endDate: new Date(2015, 4, 28, 15, 21)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 28, 16, 0),
-        endDate: new Date(2015, 4, 28, 18, 10)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 18, 30),
-        endDate: new Date(2015, 4, 28, 19, 38)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 3,
-        startDate: new Date(2015, 4, 28, 20, 20),
-        endDate: new Date(2015, 4, 28, 22, 11)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 29, 9, 30),
-        endDate: new Date(2015, 4, 29, 11, 3)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 11, 30),
-        endDate: new Date(2015, 4, 29, 13, 2)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 13, 30),
-        endDate: new Date(2015, 4, 29, 15, 21)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 16, 0),
-        endDate: new Date(2015, 4, 29, 18, 10)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 18, 30),
-        endDate: new Date(2015, 4, 29, 19, 38)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 20, 20),
-        endDate: new Date(2015, 4, 29, 22, 11)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 30, 9, 30),
-        endDate: new Date(2015, 4, 30, 11, 3)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 30, 11, 30),
-        endDate: new Date(2015, 4, 30, 13, 2)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 30, 13, 30),
-        endDate: new Date(2015, 4, 30, 15, 21)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 30, 16, 0),
-        endDate: new Date(2015, 4, 30, 18, 10)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 30, 18, 30),
-        endDate: new Date(2015, 4, 30, 19, 38)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 3,
-        startDate: new Date(2015, 4, 30, 20, 20),
-        endDate: new Date(2015, 4, 30, 22, 11)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 31, 9, 30),
-        endDate: new Date(2015, 4, 31, 11, 3)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 4, 31, 11, 30),
-        endDate: new Date(2015, 4, 31, 12, 57)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 31, 13, 20),
-        endDate: new Date(2015, 4, 31, 15, 11)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 31, 16, 0),
-        endDate: new Date(2015, 4, 31, 17, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 4, 31, 18, 0),
-        endDate: new Date(2015, 4, 31, 19, 33)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 4,
-        startDate: new Date(2015, 4, 31, 20, 00),
-        endDate: new Date(2015, 4, 31, 21, 27)
-    }, {
-        theatreId: 0,
-        movieId: 4,
-        price: 3,
-        startDate: new Date(2015, 4, 31, 21, 50),
-        endDate: new Date(2015, 4, 31, 22, 58)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 1, 9, 0),
-        endDate: new Date(2015, 5, 1, 10, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 1, 11, 30),
-        endDate: new Date(2015, 5, 1, 13, 3)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 1, 13, 30),
-        endDate: new Date(2015, 5, 1, 15, 21)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 1, 15, 30),
-        endDate: new Date(2015, 5, 1, 17, 21)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 1, 17, 30),
-        endDate: new Date(2015, 5, 1, 18, 57)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 5, 1, 20, 0),
-        endDate: new Date(2015, 5, 1, 22, 10)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 2, 9, 0),
-        endDate: new Date(2015, 5, 2, 10, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 2, 11, 0),
-        endDate: new Date(2015, 5, 2, 12, 33)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 2, 13, 0),
-        endDate: new Date(2015, 5, 2, 14, 51)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 2, 15, 30),
-        endDate: new Date(2015, 5, 2, 17, 21)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 2, 17, 30),
-        endDate: new Date(2015, 5, 2, 18, 57)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 5, 2, 20, 0),
-        endDate: new Date(2015, 5, 2, 22, 10)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 3, 9, 0),
-        endDate: new Date(2015, 5, 3, 10, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 3, 11, 0),
-        endDate: new Date(2015, 5, 3, 12, 33)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 3, 13, 0),
-        endDate: new Date(2015, 5, 3, 14, 51)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 3, 15, 30),
-        endDate: new Date(2015, 5, 3, 17, 21)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 3, 17, 30),
-        endDate: new Date(2015, 5, 3, 18, 57)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 5, 3, 20, 0),
-        endDate: new Date(2015, 5, 3, 22, 10)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 4, 9, 00),
-        endDate: new Date(2015, 5, 4, 10, 33)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 4, 11, 00),
-        endDate: new Date(2015, 5, 4, 12, 32)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 4, 13, 0),
-        endDate: new Date(2015, 5, 4, 14, 51)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 4, 15, 30),
-        endDate: new Date(2015, 5, 4, 17, 40)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 4, 18, 0),
-        endDate: new Date(2015, 5, 4, 19, 27)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 3,
-        startDate: new Date(2015, 5, 4, 20, 0),
-        endDate: new Date(2015, 5, 4, 21, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 5, 9, 00),
-        endDate: new Date(2015, 5, 5, 10, 33)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 5, 11, 00),
-        endDate: new Date(2015, 5, 5, 12, 32)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 5, 13, 0),
-        endDate: new Date(2015, 5, 5, 14, 51)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 5, 15, 30),
-        endDate: new Date(2015, 5, 5, 17, 40)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 5, 18, 0),
-        endDate: new Date(2015, 5, 5, 19, 27)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 3,
-        startDate: new Date(2015, 5, 5, 20, 0),
-        endDate: new Date(2015, 5, 5, 21, 32)
-    }, {
-        theatreId: 0,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 6, 9, 00),
-        endDate: new Date(2015, 5, 6, 10, 33)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 6, 11, 00),
-        endDate: new Date(2015, 5, 6, 12, 32)
-    }, {
-        theatreId: 0,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 6, 13, 0),
-        endDate: new Date(2015, 5, 6, 14, 51)
-    }, {
-        theatreId: 0,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 6, 15, 30),
-        endDate: new Date(2015, 5, 6, 17, 40)
-    }, {
-        theatreId: 0,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 6, 18, 0),
-        endDate: new Date(2015, 5, 6, 19, 27)
-    }, {
-        theatreId: 0,
-        movieId: 1,
-        price: 3,
-        startDate: new Date(2015, 5, 6, 20, 0),
-        endDate: new Date(2015, 5, 6, 21, 32)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 9, 30),
-        endDate: new Date(2015, 4, 24, 11, 21)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 24, 12, 0),
-        endDate: new Date(2015, 4, 24, 13, 32)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 3,
-        startDate: new Date(2015, 4, 24, 14, 0),
-        endDate: new Date(2015, 4, 24, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 24, 16, 10),
-        endDate: new Date(2015, 4, 24, 17, 18)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 17, 30),
-        endDate: new Date(2015, 4, 24, 19, 3)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 19, 30),
-        endDate: new Date(2015, 4, 24, 21, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 4, 24, 21, 20),
-        endDate: new Date(2015, 4, 24, 22, 53)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 9, 30),
-        endDate: new Date(2015, 4, 25, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 11, 30),
-        endDate: new Date(2015, 4, 25, 13, 3)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 25, 13, 30),
-        endDate: new Date(2015, 4, 25, 15, 40)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 16, 0),
-        endDate: new Date(2015, 4, 25, 17, 8)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 25, 17, 30),
-        endDate: new Date(2015, 4, 25, 19, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 3,
-        startDate: new Date(2015, 4, 25, 19, 40),
-        endDate: new Date(2015, 4, 25, 21, 13)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 25, 21, 40),
-        endDate: new Date(2015, 4, 25, 22, 48)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 26, 9, 30),
-        endDate: new Date(2015, 4, 26, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 26, 11, 30),
-        endDate: new Date(2015, 4, 26, 13, 3)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 26, 13, 30),
-        endDate: new Date(2015, 4, 26, 15, 41)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 26, 16, 0),
-        endDate: new Date(2015, 4, 26, 18, 10)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 26, 18, 30),
-        endDate: new Date(2015, 4, 26, 19, 38)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 4,
-        startDate: new Date(2015, 4, 26, 20, 20),
-        endDate: new Date(2015, 4, 26, 22, 30)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 9, 30),
-        endDate: new Date(2015, 4, 27, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 11, 30),
-        endDate: new Date(2015, 4, 27, 13, 3)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 27, 13, 30),
-        endDate: new Date(2015, 4, 27, 15, 41)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 27, 16, 0),
-        endDate: new Date(2015, 4, 27, 18, 10)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 27, 18, 30),
-        endDate: new Date(2015, 4, 27, 19, 38)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 27, 20, 20),
-        endDate: new Date(2015, 4, 27, 22, 30)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 9, 10),
-        endDate: new Date(2015, 4, 28, 10, 43)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 11, 0),
-        endDate: new Date(2015, 4, 28, 12, 32)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 13, 10),
-        endDate: new Date(2015, 4, 28, 15, 1)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 28, 15, 40),
-        endDate: new Date(2015, 4, 28, 17, 50)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 1,
-        startDate: new Date(2015, 4, 28, 18, 20),
-        endDate: new Date(2015, 4, 28, 19, 28)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 3,
-        startDate: new Date(2015, 4, 28, 20, 20),
-        endDate: new Date(2015, 4, 28, 22, 11)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 29, 10, 0),
-        endDate: new Date(2015, 4, 29, 11, 33)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 12, 0),
-        endDate: new Date(2015, 4, 29, 13, 32)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 14, 0),
-        endDate: new Date(2015, 4, 29, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 16, 30),
-        endDate: new Date(2015, 4, 29, 18, 40)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 29, 19, 0),
-        endDate: new Date(2015, 4, 29, 20, 8)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 4,
-        startDate: new Date(2015, 4, 29, 20, 30),
-        endDate: new Date(2015, 4, 29, 22, 50)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 30, 10, 0),
-        endDate: new Date(2015, 4, 30, 11, 33)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 4, 30, 12, 0),
-        endDate: new Date(2015, 4, 30, 13, 32)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 30, 14, 0),
-        endDate: new Date(2015, 4, 30, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 30, 16, 30),
-        endDate: new Date(2015, 4, 30, 18, 40)
-    }, {
-        theatreId: 1,
-        movieId: 4,
-        price: 2,
-        startDate: new Date(2015, 4, 30, 19, 0),
-        endDate: new Date(2015, 4, 30, 20, 8)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 30, 20, 30),
-        endDate: new Date(2015, 4, 30, 22, 50)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 4, 31, 10, 0),
-        endDate: new Date(2015, 4, 31, 11, 33)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 4, 31, 12, 0),
-        endDate: new Date(2015, 4, 31, 13, 27)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 4, 31, 14, 0),
-        endDate: new Date(2015, 4, 31, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 2,
-        startDate: new Date(2015, 4, 31, 16, 30),
-        endDate: new Date(2015, 4, 31, 18, 2)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 4, 31, 18, 30),
-        endDate: new Date(2015, 4, 31, 20, 40)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 4,
-        startDate: new Date(2015, 4, 31, 21, 0),
-        endDate: new Date(2015, 4, 31, 22, 27)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 1, 9, 30),
-        endDate: new Date(2015, 5, 1, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 1,
-        startDate: new Date(2015, 5, 1, 12, 0),
-        endDate: new Date(2015, 5, 1, 13, 27)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 1, 14, 0),
-        endDate: new Date(2015, 5, 1, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 1, 16, 30),
-        endDate: new Date(2015, 5, 1, 18, 21)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 1, 19, 0),
-        endDate: new Date(2015, 5, 1, 20, 27)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 3,
-        startDate: new Date(2015, 5, 1, 21, 0),
-        endDate: new Date(2015, 5, 1, 22, 33)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 2, 10, 0),
-        endDate: new Date(2015, 5, 2, 11, 32)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 1,
-        startDate: new Date(2015, 5, 2, 12, 0),
-        endDate: new Date(2015, 5, 2, 13, 27)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 2, 14, 0),
-        endDate: new Date(2015, 5, 2, 15, 51)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 2,
-        startDate: new Date(2015, 5, 2, 16, 30),
-        endDate: new Date(2015, 5, 2, 18, 3)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 2, 19, 0),
-        endDate: new Date(2015, 5, 2, 20, 27)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 3,
-        startDate: new Date(2015, 5, 2, 21, 0),
-        endDate: new Date(2015, 5, 2, 22, 33)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 3, 9, 30),
-        endDate: new Date(2015, 5, 3, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 3, 11, 30),
-        endDate: new Date(2015, 5, 3, 13, 3)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 2,
-        startDate: new Date(2015, 5, 3, 14, 0),
-        endDate: new Date(2015, 5, 3, 15, 27)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 3, 16, 0),
-        endDate: new Date(2015, 5, 3, 17, 51)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 3, 18, 10),
-        endDate: new Date(2015, 5, 3, 19, 37)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 4,
-        startDate: new Date(2015, 5, 3, 20, 30),
-        endDate: new Date(2015, 5, 3, 22, 40)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 4, 9, 30),
-        endDate: new Date(2015, 5, 4, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 4, 11, 30),
-        endDate: new Date(2015, 5, 4, 13, 2)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 2,
-        startDate: new Date(2015, 5, 4, 14, 0),
-        endDate: new Date(2015, 5, 4, 15, 27)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 4, 16, 0),
-        endDate: new Date(2015, 5, 4, 17, 51)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 4, 18, 10),
-        endDate: new Date(2015, 5, 4, 19, 37)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 3,
-        startDate: new Date(2015, 5, 4, 20, 20),
-        endDate: new Date(2015, 5, 4, 22, 30)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 5, 9, 30),
-        endDate: new Date(2015, 5, 5, 11, 2)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 5, 11, 30),
-        endDate: new Date(2015, 5, 5, 13, 2)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 5, 13, 30),
-        endDate: new Date(2015, 5, 5, 15, 21)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 5, 16, 0),
-        endDate: new Date(2015, 5, 5, 18, 10)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 5, 18, 30),
-        endDate: new Date(2015, 5, 5, 19, 57)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 3,
-        startDate: new Date(2015, 5, 5, 20, 30),
-        endDate: new Date(2015, 5, 5, 22, 3)
-    }, {
-        theatreId: 1,
-        movieId: 2,
-        price: 1,
-        startDate: new Date(2015, 5, 6, 9, 30),
-        endDate: new Date(2015, 5, 6, 11, 3)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 1,
-        startDate: new Date(2015, 5, 6, 11, 30),
-        endDate: new Date(2015, 5, 6, 13, 2)
-    }, {
-        theatreId: 1,
-        movieId: 3,
-        price: 2,
-        startDate: new Date(2015, 5, 6, 13, 30),
-        endDate: new Date(2015, 5, 6, 15, 21)
-    }, {
-        theatreId: 1,
-        movieId: 5,
-        price: 2,
-        startDate: new Date(2015, 5, 6, 16, 0),
-        endDate: new Date(2015, 5, 6, 18, 10)
-    }, {
-        theatreId: 1,
-        movieId: 6,
-        price: 3,
-        startDate: new Date(2015, 5, 6, 18, 30),
-        endDate: new Date(2015, 5, 6, 19, 57)
-    }, {
-        theatreId: 1,
-        movieId: 1,
-        price: 3,
-        startDate: new Date(2015, 5, 6, 20, 30),
-        endDate: new Date(2015, 5, 6, 22, 2)
-    }
+
+    var priorityData = [
+        {
+            text: "Tennis Court 1",
+            id: 1,
+            color: "#1e90ff"
+        }, {
+            text: "Tennis Court 2",
+            id: 2,
+            color: "#ff9747"
+        }, {
+            text: "BasketBall",
+            id: 3,
+            color: "#AA3933"
+        }
     ];
 
 
@@ -2052,7 +1029,7 @@
             title: 'Create a Free Account',
             dragEnabled: false,
             width: 500,
-            height: 700,
+            height: 900,
             closeOnOutsideClick: true,
             onShown: function () {
                 $(function () {
@@ -2145,6 +1122,19 @@
                     $("#link4").unbind()
     .click(function () { popoverWithShading.show() });
 
+                    //Tabs
+                    $("#myTabs").dxTabs({
+                        dataSource: [
+                            { text: "History", icon: "globe", content: "'User' tab content" },
+                            { text: "Notes", icon: "edit", content: "'Comment' tab content" },
+                            { text: "Statistics", icon: "chart", content: "'Find' tab content" }
+                        ],
+                        selectedIndex: 0,
+                        onItemClick: function (e) {
+                            $("#myTabContent").text(e.itemData.content);
+                        }
+                    });
+
 
 
                     $("#summary").dxValidationSummary({});
@@ -2174,154 +1164,39 @@
         
 
         //Scheduler
-        var scheduler = $(".scheduler").dxScheduler({
+        function showToast(event, value, type) {
+            DevExpress.ui.notify(event + " \"" + value + "\"" + " task", type, 800);
+        };
+
+        $(".scheduler").dxScheduler({
             dataSource: data,
-            views: ["month","week", "day", "timelineDay"],
-            currentView: "timelineDay",
-            currentDate: new Date(),
+            views: ["month", "week", "day"],
+            currentView: "week",
+            currentDate: new Date(2015, 4, 25),
             firstDayOfWeek: 0,
-            startDayHour: 9,
-            endDayHour: 23,
-            useDropDownViewSwitcher: true,
-            showAllDayPanel: false,
-            width: "100%",
-            height: 600,
-            groups: ["theatreId"],
-            horizontalScrollingEnabled: true,
-            cellDuration: 20,
-            editing: {
-                allowAdding: true,
-                allowDeleting: true,
-                allowUpdating: true
+            startDayHour: 8,
+            endDayHour: 19,
+            onAppointmentAdded: function (e) {
+                showToast("Added", e.appointmentData.text, "success");
             },
-            resources: [{
-                field: "movieId",
-                dataSource: moviesData,
-                useColorAsDefault: true
-            }, {
-                field: "theatreId",
-                dataSource: theatreData
-            }],
-            appointmentTooltipTemplate: function (data, container) {
-                var markup = getTooltipTemplate(getMovieById(data.movieId));
-                markup.find(".edit").dxButton({
-                    text: "Edit details",
-                    onClick: function () {
-                        scheduler.showAppointmentPopup(data, false);
-                    }
-                });
-                return markup;
+            onAppointmentUpdated: function (e) {
+                showToast("Updated", e.appointmentData.text, "info");
             },
-            appointmentTemplate: function (data) {
-                var movieInfo = getMovieById(data.movieId) || {};
-
-                return $("<div class='showtime-preview'>" +
-                            "<div>" + movieInfo.text + "</div>" +
-                            "<div>Ticket Price: <strong>" +
-                                prices[data.price - 1].text + "</strong>" +
-                            "</div>" +
-                            "<div>" + Globalize.format(data.startDate, 'hh:mm tt') +
-                                " - " + Globalize.format(data.endDate, 'hh:mm tt') +
-                            "</div>" +
-                         "</div>");
-
+            onAppointmentDeleted: function (e) {
+                showToast("Deleted", e.appointmentData.text, "warning");
             },
-            onAppointmentFormCreated: function (data) {
-                var form = data.form,
-                    movieInfo = getMovieById(data.appointmentData.movieId) || {},
-                    startDate = data.appointmentData.startDate;
-
-                form.option("items", [{
-                    label: {
-                        text: "Movie"
-                    },
-                    editorType: "dxSelectBox",
-                    dataField: "movieId",
-                    editorOptions: {
-                        items: moviesData,
-                        displayExpr: "text",
-                        valueExpr: "id",
-                        value: data.appointmentData.movieId,
-                        onValueChanged: function (args) {
-                            movieInfo = getMovieById(args.value);
-                            form.getEditor("director")
-                                .option("value", movieInfo.director);
-                            form.getEditor("endDate")
-                                .option("value", new Date(startDate.getTime() +
-                                    60 * 1000 * movieInfo.duration));
-                        }
-                    },
-                }, {
-                    label: {
-                        text: "Director"
-                    },
-                    name: "director",
-                    editorType: "dxTextBox",
-                    editorOptions: {
-                        value: movieInfo.director,
-                        readOnly: true
-                    },
-                }, {
-                    dataField: "startDate",
-                    editorType: "dxDateBox",
-                    editorOptions: {
-                        value: startDate,
-                        format: "datetime",
-                        onValueChanged: function (args) {
-                            startDate = args.value;
-                            form.getEditor("endDate")
-                                .option("value", new Date(startDate.getTime() +
-                                    60 * 1000 * movieInfo.duration));
-                        }
-                    }
-                }, {
-                    name: "endDate",
-                    dataField: "endDate",
-                    editorType: "dxDateBox",
-                    editorOptions: {
-                        value: data.appointmentData.endDate,
-                        format: "datetime",
-                        readOnly: true
-                    }
-                }, {
-                    dataField: "price",
-                    editorType: "dxRadioGroup",
-                    editorOptions: {
-                        dataSource: prices,
-                        displayExpr: "text",
-                        valueExpr: "id",
-                        value: data.appointmentData.price
-                    }
+            groups: ["priorityId"],
+            resources: [
+                {
+                    field: "priorityId",
+                    allowMultiple: false,
+                    dataSource: priorityData,
+                    label: "Priority"
                 }
-                ]);
-            }
-        }).dxScheduler("instance");
-
-        function getMovieById(id) {
-            for (var i = 0; i < moviesData.length; i++) {
-                if (moviesData[i].id === id)
-                    return moviesData[i];
-            }
-            return null;
-        }
-
-        function getTooltipTemplate(movieData) {
-            return $("<div class='movie-tooltip'>" +
-                        "<img src='" + movieData.image + "' />" +
-                        "<div class='movie-info'>" +
-                            "<div class='movie-title'>" +
-                                movieData.text + " (" + movieData.year + ")" +
-                            "</div>" +
-                            "<div>" +
-                                "Director: " + movieData.director +
-                            "</div>" +
-                            "<div>" +
-                                "Duration: " + movieData.duration + " minutes" +
-                            "</div>" +
-                        "</div><br />" +
-                        "<div class='edit'></div>" +
-                     "</div>");
-        }
+            ],
+            width: "100%",
+            height: 600
+        });
 
         //Group Fields (dxForm)
         $("#form").dxForm({
@@ -2428,6 +1303,9 @@
                             </div>
                         </div>
                     </div>
+                    <div id="myTabs"></div>
+                    <div class="tabContent" id="myTabContent">'User' tab content</div>
+
                  </div>
 
                 <!--Load Data controller-->
