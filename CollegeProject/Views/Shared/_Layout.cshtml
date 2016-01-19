@@ -2115,10 +2115,31 @@
                     //Popover
                     var popoverWithShading = $("#popover4").dxPopover({
                         target: "#link4",
-                        position: "top",
+                        position: "bottom",
                         width: 300,
-                        shading: true,
-                        shadingColor: "rgba(0, 0, 0, 0.5)"
+                        onShown: function () {
+
+                            var selectBoxData = [
+                                { "name": "Alabama", "capital": "Montgomery" },
+                                 { "name": "Alaska", "capital": "Juneau" },
+                                 { "name": "Arizona", "capital": "Phoenix" }
+                            ]
+
+                            $("#selectBox").dxSelectBox({
+                                dataSource: selectBoxData,
+                                valueExpr: 'capital',
+                                displayExpr: 'name'
+                            });
+
+                            $("#buttonAccept").dxButton({
+                                text: 'Add Court',
+                                onClick: function () {
+                                    alert('Button clicked');
+                                }
+                            });
+
+
+                        }
                     }).dxPopover("instance");
 
                     $("#link4").unbind()
@@ -2402,8 +2423,8 @@
                                 (<a id="link4">more</a>)
                             </p>
                             <div id="popover4">
-                                The changes in our brochure designs for 2013 require
-                                us to update key areas of our website.
+                                <div id="selectBox"></div>
+                                <div id="buttonAccept"></div>
                             </div>
                         </div>
                     </div>
