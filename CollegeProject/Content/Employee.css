@@ -241,3 +241,37 @@
     font-size: 1.5em;
     line-height: 40px;
 }
+
+/*Grouped Field Forms*/
+#form-container {
+	margin: 10px;
+}
+
+#buttonCreate {
+    margin-left: 115px;
+    height: 80px;
+    width: 250px;
+    text-decoration:line-through;
+}
+
+
+/*This is for label up*/
+.dx-toolbar-label>div{
+    margin-left: 120px;
+}
+
+/*PopOver*/
+.popup .form a {
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 1px dashed;
+    text-decoration: none;
+}
+
+.popup .form a:hover {
+    text-decoration: none;
+}
+
+#link4 {
+    border-bottom-style: solid;
+}
