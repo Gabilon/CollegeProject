@@ -82,10 +82,14 @@
     display: inline-block;
     vertical-align: middle;
     padding: 10px;
-
 }
 
-#employee {
+#container {
+    margin-left: 100px;
+}
+
+
+#employees {
     margin: 20px 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -97,7 +101,7 @@
     border-bottom: 1px solid lightgray;
 }
 
-#employee > p {
+#employees > p {
     padding: 10px 20px;
 }
 
@@ -145,14 +149,24 @@
 }
 
 /*List*/
-.dx-fieldset.options {
+.dx-fieldset .options {
     margin-top: 0;
     margin-bottom: 20px;
+    margin: 20px 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
 
 .options > div {
     max-width: 380px;
     vertical-align: middle;
+
 }
 
 #selectedItems {
@@ -261,8 +275,20 @@
 }
 
 /*Vertical Navbar*/
-.nav .nav-pills > li > a {
+#court {
 -webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+#service {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+ }
+
+#courtProfile {
+    -webkit-border-radius: 0;
 -moz-border-radius: 0;
 border-radius: 0;
 }
@@ -270,3 +296,9 @@ border-radius: 0;
 #titleCourts {
     font-size: 35px;
 }
+
+#allSports {
+    margin-left: 10px;
+}
+
+/*LookUp Overview*/
