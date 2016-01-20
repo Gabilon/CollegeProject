@@ -518,6 +518,11 @@
             text: "BasketBall",
             id: 3,
             color: "#AA3933"
+        },
+        {
+            text: "Volleyball",
+            id: 4,
+            color: "#ffff66"
         }
     ];
 
@@ -1123,39 +1128,7 @@
     .click(function () { popoverWithShading.show() });
 
                     //Tabs
-                    $("#myTabs").dxTabs({
-                        dataSource: [
-                            { text: "History", icon: "globe", content: "'User' tab content" },
-                            { text: "Notes", icon: "edit", content: "Notes user tab" },
-                            { text: "Statistics", icon: "chart", content: "'Find' tab content" }
-                        ],
-                        selectedIndex: 0,
-                        onItemClick: function (e) {
-                            if (e.itemData.text == "Notes") {
-                                $("#textNote").value(e.itemData.content);
-                            } else {
-                                selectBox.option("value", e.itemData.id);
-                            }
-                        }
-                    }).dxTabs("instance");
-
-                    var textNoteArea = $("#textNote").dxTextArea({
-                        value: 'Enter client notes here.',
-                        maxLength: 500,
-                        height: 400
-
-                    }).dxTextArea("instance");
-
-                    var selectBoxer = $("#selectboxer").dxSelectBox({
-                        value: 0,
-                        dataSource: tabs,
-                        displayExpr: "text",
-                        valueExpr: "id",
-                        onValueChanged: function (e) {
-                            tabsInstance.option("selectedIndex", e.value);
-                            $(".left-aligned").text(tabs[e.value].content);
-                        }
-                    }).dxSelectBox("instance");
+                    
 
 
                     $("#summary").dxValidationSummary({});
@@ -1192,15 +1165,15 @@
         $(".scheduler").dxScheduler({
             dataSource: data,
             views: ["month", "week", "day"],
-            currentView: "week",
+            currentView: "day",
             currentDate: new Date(2015, 4, 25),
             firstDayOfWeek: 0,
             startDayHour: 8,
             endDayHour: 19,
-            useDropDownViewSwitcher: true,
-            onOptionChanged: function(e) {
-                
+            cellClick: function(e){
+
             },
+            useDropDownViewSwitcher: true,
             onAppointmentAdded: function (e) {
                 showToast("Added", e.appointmentData.text, "success");
             },
@@ -1214,14 +1187,17 @@
             resources: [
                 {
                     field: "priorityId",
-                    allowMultiple: false,
+                    allowMultiple: true,
                     dataSource: priorityData,
-                    label: "Priority"
+                    label: "Courts"
                 }
             ],
             width: "100%",
             height: 600
+            
         });
+
+
 
         //Group Fields (dxForm)
         $("#form").dxForm({
@@ -1257,6 +1233,31 @@
                 }]
             }]
         });
+
+
+        //Navbar items (vertical)
+   
+            var navItems = $('.menu-level-2 li > a');
+            var navListItems = $('.menu-level-2 li');
+            var allWells = $('.menu-level-2-content');
+            var allWellsExceptFirst = $('.menu-level-2-content:not(:first)');
+
+            var navItems1 = $(".menu-level-3 li > a");
+            var navListItems1 = $(".menu-level-3 li");
+            var allWells1 = $(".menu-level-3-content");
+            var allWellsExceptFirst1 = $(".menu-level-3-content:not(:first)");
+
+            allWellsExceptFirst.hide();
+            navItems.click(function (e) {
+                e.preventDefault();
+                navListItems.removeClass('active');
+                $(this).closest('li').addClass('active');
+
+                allWells.hide();
+                var target = $(this).attr('data-target-id'); //get this target with this attributte
+                $('#' + target).show(); //Shows the corresponding target with the #
+            });
+        
 
     });
 
@@ -1328,28 +1329,72 @@
                             </div>
                         </div>
                     </div>
-                    <div id="myTabs">
-                        <div class="caption">API</div>
-                        <div class="tabs-container"></div>
-                        <div class="content  dx-fieldset">
-                            <div class="dx-field">
-                                <div class="dx-field-label">Selected index:</div>
-                                <div class="dx-field-value">
-                                    <div id="selectbox">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dx-field">
-                                <div class="dx-field-label">Selected content:</div>
-                                <div class="dx-field-value-static left-aligned">
-                                    User tab content
-                                    <div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
 
+                    <!--NavBar Vertical-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="nav nav-pills nav-stacked menu-level-2">
+                                <li><a href="#" data-target-id="widgets">My Courts</a></li>
+                                <li><a href="#" data-target-id="pages">Courts Profiles</a></li>
+                                <li><a href="#" data-target-id="charts">Services</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3 well menu-level-2-content" id="widgets">
+                            <p id="titleCourts">My Courts</p>
+                            <br />
+                            <br />
+                            <br />
+                            <ul class="nav nav-pills nav-stacked menu-level-3">
+                                <li><a href="#" data-target-id="allSports">All Sports</a></li>
+                                <li><a href="#" data-target-id="tennis">Tennis</a></li>
+                                <li><a href="#" data-target-id="soccer">Soccer</a></li>
+                                <li><a href="#" data-target-id="basketball">Basketball</a></li>
+                            </ul>
 
                         </div>
+                        <div class="col-md-3 well menu-level-2-content" id="pages">
+                            <p id="titleCourts">Courts Profiles</p>
+                            <br />
+                            <br />
+                            <br />
+                            <ul class="nav nav-pills nav-stacked menu-level-3">
+                                <li><a href="#" data-target-id="bookingProfiles">Booking Profiles</a></li>
+                                <li><a href="#" data-target-id="profiles">Prices Profiles</a></li>
+                                <li><a href="#" data-target-id="otherSettings">Other Settings</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 well menu-level-2-content" id="charts">
+                            <p id="titleCourts">Services</p>
+                            <br />
+                            <br />
+                            <br />
+                            <ul class="nav nav-pills nav-stacked menu-level-3">
+                                <li><a href="#" data-target-id="allCategories">All Categories</a></li>
+                                <li><a href="#" data-target-id="sportsEquipment">Sports Equipment</a></li>
+                                <li><a href="#" data-target-id="consumables">Consumables</a></li>
+                                <li><a href="#" data-target-id="personalCare">Personal Care</a></li>
+                                <li><a href="#" data-target-id="electronicEquipment">Electronic Equipment</a></li>
+                            </ul>
+                        </div>
+
+
+                        <!--This is the third level-->
+                        <div class="col-md-3 well menu-level-2-content" id="charts">
+                            <p id="titleCourts">List of Courts</p>
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+                </div>
+
+
 
                         <!--Load Data controller-->
                         <div id="container">
@@ -1376,6 +1421,8 @@
                             <div class="loadpanel"></div>
 
                         </div>
+
+                
 
                         <!--List-->
                         <div class="dx-fieldset options">
@@ -1405,11 +1452,6 @@
                         <div id="simpleList"></div>
                         <div id="simple"></div>
 
-
-                        <!--A Few Fields-->
-                        <div id="form-container">
-                            <div id="form"></div>
-
                             <div class="container body-content">
                                 @RenderBody()
                                 <hr />
@@ -1418,8 +1460,8 @@
                             @Scripts.Render("~/bundles/bootstrap")
                             @RenderSection("scripts", required: false)
                         </div>
-                    </div>
 
+                </div>
     </div>
     
 </body>
