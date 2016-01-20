@@ -1029,7 +1029,7 @@
             title: 'Create a Free Account',
             dragEnabled: false,
             width: 500,
-            height: 900,
+            height: 800,
             closeOnOutsideClick: true,
             onShown: function () {
                 $(function () {
@@ -1126,15 +1126,25 @@
                     $("#myTabs").dxTabs({
                         dataSource: [
                             { text: "History", icon: "globe", content: "'User' tab content" },
-                            { text: "Notes", icon: "edit", content: "'Comment' tab content" },
+                            { text: "Notes", icon: "edit", content: "Notes user tab" },
                             { text: "Statistics", icon: "chart", content: "'Find' tab content" }
                         ],
                         selectedIndex: 0,
                         onItemClick: function (e) {
-                            $("#myTabContent").text(e.itemData.content);
-                        }
-                    });
+                            if (e.itemData.text == "Notes") {
+                                $("#textNote").value(e.itemData.content);
+                            } else {
 
+                            }
+                        }
+                    }).dxTabs("instance");
+
+                    var textNoteArea = $("#textNote").dxTextArea({
+                        value: 'Enter client notes here.',
+                        maxLength: 500,
+                        height: 400
+
+                    }).dxTextArea("instance");
 
 
                     $("#summary").dxValidationSummary({});
@@ -1176,6 +1186,10 @@
             firstDayOfWeek: 0,
             startDayHour: 8,
             endDayHour: 19,
+            useDropDownViewSwitcher: true,
+            onOptionChanged: function(e) {
+                
+            },
             onAppointmentAdded: function (e) {
                 showToast("Added", e.appointmentData.text, "success");
             },
@@ -1305,6 +1319,7 @@
                     </div>
                     <div id="myTabs"></div>
                     <div class="tabContent" id="myTabContent">'User' tab content</div>
+                    <div id="textNote"></div>
 
                  </div>
 

@@ -219,8 +219,8 @@
     font-size: 16px;
 }
 
-.dx-scheduler-navigator .dx-widget {
-    
+.dx-scheduler-navigator {
+    padding-left: 480px;
 }
 /*Grouped Field Forms*/
 #form-container {
