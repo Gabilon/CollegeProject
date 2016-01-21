@@ -310,3 +310,12 @@ border-radius: 0;
     margin-right: 100px;
     margin-bottom: 10px;
 }
+
+#creditTextbox {
+    display: inline-table;
+}
+
+#add {
+    margin-right: 90px;
+}
+

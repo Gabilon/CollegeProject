@@ -1249,7 +1249,13 @@
                 },
                 editing: {
                     mode: "form",
-                    allowAdding: true
+                    allowAdding: true,
+                    allowUpdating: true
+                },
+                onEditingStart: function(info){
+                    if (info.cancel) {
+                        info.cancel = true;
+                    }
                 },
                 allowColumnReordering: true,
                 showColumnLines: false,
@@ -1265,20 +1271,30 @@
                         $(".birth-date").text(data.email || "");
                         $(".mobile-phone").text(data.mobile || "");
                         $(".email").text(data.other || "");
-                        $(".address-info").text(data.Address + " " + data.City + " " + data.Country + " " + data.ZIP || "");
+                        $(".address-info").text(data.Address + " " + data.City + " " + data.Country + " " + data.ZIP|| "");
                         
+                      
                         
-
                     }
                     
                 },
+                onRowClick: function (e) {
+                        selectorBox.option("value", e.data.Profile);
+
+                    
+                }
 
             });
 
             //Select either Member Super. etc.
             var selectorBox = $("#member-select").dxSelectBox({
-                displayValue: "Member",
-                items: ["Supervisor", "Member","Owner"],
+                
+                items: ["Supervisor", "Member", "Owner"],
+                value: "Member",
+                onSelectionChanged: function (e) {
+                    console.log(e.selectedItem, "GOT IT");
+
+                }
             }).dxSelectBox("instance");
 
             //txtbox for user credit
@@ -1286,7 +1302,8 @@
                 placeholder: 'Credit',
                 mask: "$9999",
                 maxLength: 10,
-                mode: 'text'
+                mode: 'text',
+                width: 110
             }).dxTextBox("instance");
 
             //Adding credit
@@ -1537,54 +1554,59 @@
                         <h1><b class="employeeName"></b></h1>
                         <div id="employees">
 
-                            <b>Email:</b> <span class="birth-date"></span>
-                            <br />
-                            <br />
-
-                            <b>Phone:</b> <span class="mobile-phone"></span>
-                            <br />
-                            <br />
-
-                            <b>Other:</b> <span class="email"></span>
-                            <br />
-                            <br />
-
-                            <b>Address:</b> <span class="address-info"></span>
-                            <br />
-                            <br />
-
-                            <div class="col-md-4">
-                                <b>Client Profile: </b>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div id="member-select"></div>
-                            </div>         
-
-                            <div class="col-md-3">
-                                <b>User Credit: </b>
-                                
-                            </div>
-                            <div class="col-md-6">
-                                <div id="creditTextbox"> </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div id="add"></div>
-                            </div>
-
-
-                            <div class="dx-fieldset">
-                                <div class="dx-field">
-                                    
-                                    
-                                    
-                                    
+                            <div class="dx-field">
+                                <b>Email:</b>
+                                <div class="dx-field-value">
+                                    <span class="birth-date"></span>
                                 </div>
                             </div>
-                                
-                                
-                            
-                        </div>
+
+                            <div class="dx-field">
+                                <b>Phone:</b>
+                                <div class="dx-field-value">
+                                    <span class="mobile-phone"></span>
+                                </div>
+                            </div>
+
+                        
+                            <div class="dx-field">
+                                <b>Other:</b>
+                                <div class="dx-field-value">
+                                    <span class="email"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="dx-field">
+                                <b>Address:</b>
+                                <div class="dx-field-value">
+                                    <span class="address-info"></span>
+                                </div>
+                            </div>
+                                 
+
+
+
+
+                                <div class="dx-field">
+                                    <b>Client Profile:</b>
+                                    <div class="dx-field-value">
+                                        <div id="member-select"></div>
+                                    </div>
+                                </div>
+                                <div class="dx-field">
+                                    <b>User Credit: </b>
+                                    <div class="dx-field-value">
+                                        <div id="creditTextbox"> </div>
+                                        <div id="add"></div>
+
+                                    </div>
+                                </div>
+
+                                <br />
+
+
+                            </div>
                     </div>
                     <div class="col-md-4">
                         <div id="tabs"></div>
