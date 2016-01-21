@@ -90,7 +90,7 @@
 
 
 #employees {
-    margin: 20px 0;
+    margin: 35px 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -99,6 +99,8 @@
     user-select: none;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+    margin-top: 35px;
+
 }
 
 #employees > p {
@@ -301,4 +303,10 @@ border-radius: 0;
     margin-left: 10px;
 }
 
-/*LookUp Overview*/
+/*SelectView for Clientes*/
+
+/*Select Box from SelectView*/
+#moveIt {
+    margin-right: 100px;
+    margin-bottom: 10px;
+}

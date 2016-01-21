@@ -427,77 +427,77 @@
 
         var data = [
         {
-            text: "Website Re-Design Plan",
+            text: "Juan Perez",
             priorityId: 2,
             startDate: new Date(2015, 4, 25, 9, 0),
             endDate: new Date(2015, 4, 25, 11, 30)
         }, {
-            text: "Book Flights to San Fran for Sales Trip",
+            text: "Alejandro Almodovar",
             priorityId: 2,
             startDate: new Date(2015, 4, 25, 12, 0),
             endDate: new Date(2015, 4, 25, 13, 0)
         }, {
-            text: "Install New Router in Dev Room",
+            text: "Juan Perez",
             priorityId: 1,
             startDate: new Date(2015, 4, 25, 14, 30),
             endDate: new Date(2015, 4, 25, 15, 30)
         }, {
-            text: "Approve Personal Computer Upgrade Plan",
+            text: "Juan Perez",
             priorityId: 2,
             startDate: new Date(2015, 4, 26, 10, 0),
             endDate: new Date(2015, 4, 26, 11, 0)
         }, {
-            text: "Final Budget Review",
+            text: "Valentina",
             priorityId: 2,
             startDate: new Date(2015, 4, 26, 12, 0),
             endDate: new Date(2015, 4, 26, 13, 35)
         }, {
-            text: "New Brochures",
+            text: "Arturo Ruiz",
             priorityId: 2,
             startDate: new Date(2015, 4, 26, 14, 30),
             endDate: new Date(2015, 4, 26, 15, 45)
         }, {
-            text: "Install New Database",
+            text: "Juan Perez",
             priorityId: 1,
             startDate: new Date(2015, 4, 27, 9, 45),
             endDate: new Date(2015, 4, 27, 11, 15)
         }, {
-            text: "Approve New Online Marketing Strategy",
+            text: "Antonia Sanz",
             priorityId: 2,
             startDate: new Date(2015, 4, 27, 12, 0),
             endDate: new Date(2015, 4, 27, 14, 0)
         }, {
-            text: "Upgrade Personal Computers",
+            text: "Antonia Sanz",
             priorityId: 1,
             startDate: new Date(2015, 4, 27, 15, 15),
             endDate: new Date(2015, 4, 27, 16, 30)
         }, {
-            text: "Prepare 2015 Marketing Plan",
+            text: "Arturo Ruiz",
             priorityId: 2,
             startDate: new Date(2015, 4, 28, 11, 0),
             endDate: new Date(2015, 4, 28, 13, 30)
         }, {
-            text: "Brochure Design Review",
+            text: "Alejandro Almovodar",
             priorityId: 1,
             startDate: new Date(2015, 4, 28, 14, 0),
             endDate: new Date(2015, 4, 28, 15, 30)
         }, {
-            text: "Create Icons for Website",
+            text: "Alejandro Almovodar",
             priorityId: 2,
             startDate: new Date(2015, 4, 29, 10, 0),
             endDate: new Date(2015, 4, 29, 11, 30)
         }, {
-            text: "Upgrade Server Hardware",
+            text: "Juan Perez",
             priorityId: 1,
             startDate: new Date(2015, 4, 29, 14, 30),
             endDate: new Date(2015, 4, 29, 16, 0)
         }, {
-            text: "Submit New Website Design",
+            text: "Arturo Ruiz",
             priorityId: 2,
             startDate: new Date(2015, 4, 29, 16, 30),
             endDate: new Date(2015, 4, 29, 18, 0)
         }, {
-            text: "Launch New Website",
+            text: "Juan Perez",
             priorityId: 2,
             startDate: new Date(2015, 4, 29, 12, 20),
             endDate: new Date(2015, 4, 29, 14, 0)
@@ -802,47 +802,7 @@
             $(".options > #showNavButtons")
             $(".options > #showIndicator")
 
-            //Gallery
-            var galleryWidget = $(".gallery-container > #gallery").dxGallery({
-                dataSource: gallery,
-                height: 300,
-                loop: true,
-                slideshowDelay: 2000,
-                showNavButtons: true,
-                showIndicator: true
-            }).dxGallery("instance");
-
-            $(".options > #useLoop").dxCheckBox({
-                value: true,
-                text: "Loop mode",
-                onValueChanged: function (data) {
-                    galleryWidget.option("loop", data.value);
-                }
-            });
-
-            $(".options > #slideShow").dxCheckBox({
-                value: true,
-                text: "Slide show",
-                onValueChanged: function (data) {
-                    galleryWidget.option("slideshowDelay", data.value ? 2000 : 0);
-                }
-            });
-
-            $(".options > #showNavButtons").dxCheckBox({
-                value: true,
-                text: "Navigation buttons",
-                onValueChanged: function (data) {
-                    galleryWidget.option("showNavButtons", data.value);
-                }
-            });
-
-            $(".options > #showIndicator").dxCheckBox({
-                value: true,
-                text: "Indicator",
-                onValueChanged: function (data) {
-                    galleryWidget.option("showIndicator", data.value);
-                }
-            });
+            
 
 
             //Panel
@@ -1197,6 +1157,147 @@
 
             });
 
+            var clientes = [{
+                "ID": 1,
+                "firstName": "Alejandro",
+                "lastName": "Almovodar",
+                "email": "alejandro@bmail.com",
+                "mobile": "7878746845",
+                "other": "7875478954",
+                "Address": "URB El Pilar",
+                "City": "San Juan",
+                "Country": "Puerto Rico",
+                "ZIP": "00936",
+                "Profile": "Member"
+            }, {
+                "ID": 2,
+                "firstName": "Arturo",
+                "lastName": "Ruiz",
+                "email": "arturo@bmail.com",
+                "mobile": "7874651324",
+                "other": "7871347898",
+                "Address": "URB El Valle",
+                "Profile": "Member"
+            }, {
+                "ID": 3,
+                "firstName": "Antonia",
+                "lastName": "Sanz",
+                "email": "anotonia@bmail.com",
+                "mobile": "7874451324",
+                "other": "7871341234",
+                "Address": "URB El Condado",
+                "City": "Caguas",
+                "Country": "Puerto Rico",
+                "ZIP": "00974",
+                "Profile": "Owner"
+            }, {
+                "ID": 4,
+                "firstName": "Juan",
+                "lastName": "Perez",
+                "email": "juan@bmail.com",
+                "mobile": "7871721324",
+                "other": "7873341234",
+                "Address": "URB La Reserva",
+                "City": "Madrid",
+                "Country": "España",
+                "ZIP": "28008",
+                "Profile": "Supervisor"
+            }, {
+                "ID": 5,
+                "firstName": "Valentina",
+                "lastName": "",
+                "email": "VSAL@bmail.com",
+                "mobile": "7872451324",
+                "other": "7874141234",
+                "Address": "URB El Sur",
+                "City": "Aibonito",
+                "Country": "Puerto Rico",
+                "ZIP": "00724",
+                "Profile": "Supervisor"
+                
+            }, {
+                "ID": 6,
+                "firstName": "Sebastian",
+                "lastName": "",
+                "email": "SEB@bmail.com",
+                "mobile": "7878781424",
+                "other": "9394584134",
+                "Address": "URB El Sunrise",
+                "City": "Fajardo",
+                "Country": "Puerto Rico",
+                "ZIP": "00647",
+                "Profile": "Member"
+            }];
+
+
+            //For Client Selection: 
+            $("#first-name").dxDataGrid({
+                dataSource: {
+                    store: {
+                        data: clientes,
+                        type: 'array',
+                        key: 'ID'
+                    }
+                },
+                
+                selection: {
+                    mode: "single"
+                },
+                searchPanel: {
+                    visible: true,
+                    width: 200
+                },
+                editing: {
+                    mode: "form",
+                    allowAdding: true
+                },
+                allowColumnReordering: true,
+                showColumnLines: false,
+                showRowLines: false,
+                hoverStateEnabled: true,
+                columnAutoWidth: true,
+                columns: ["firstName", "lastName", {dataField: "Profile", caption: "Client Type"}],
+                selectedRowKeys: [1],
+                onSelectionChanged: function (selectedItems) {
+                    var data = selectedItems.selectedRowsData[0];
+                    if (data) {
+                        $(".employeeName").text(data.firstName + " " + data.lastName || "");
+                        $(".birth-date").text(data.email || "");
+                        $(".mobile-phone").text(data.mobile || "");
+                        $(".email").text(data.other || "");
+                        $(".address-info").text(data.Address + " " + data.City + " " + data.Country + " " + data.ZIP || "");
+                        
+                        
+
+                    }
+                    
+                },
+
+            });
+
+            //Select either Member Super. etc.
+            var selectorBox = $("#member-select").dxSelectBox({
+                displayValue: "Member",
+                items: ["Supervisor", "Member","Owner"],
+            }).dxSelectBox("instance");
+
+            //txtbox for user credit
+            var creditTextBox = $("#creditTextbox").dxTextBox({
+                placeholder: 'Credit',
+                mask: "$9999",
+                maxLength: 10,
+                mode: 'text'
+            }).dxTextBox("instance");
+
+            //Adding credit
+            $("#add").dxButton({
+                text: 'Add',
+                onClick: function () {
+                    
+                    alert('Added: $$$$');
+                }
+            });
+
 
             //Navbar items (vertical)
 
@@ -1234,81 +1335,49 @@
             });
 
             //TabBar Items
-            var tabBarItems = [
-        {
-            title: "Info",
-            data: {
-                firstName: "John",
-                lastName: "Smith",
-                birthYear: 1986,
-            }
-        },
-        {
-            title: "Contacts",
-            data: {
-                phone: "(555)555-5555",
-                email: "John.Smith@example.com",
-            }
-        },
-        {
-            title: "Address",
-            data: {
-                state: "CA",
-                city: "San Francisco",
-                street: "Stanford Ave",
-            }
-        }
-            ];
+            var tabItems = [
+                { text: "History", icon: "globe" },
+                { text: "Notes", icon: "edit" },
+                { text: "Statistics", icon: "chart"}
+            ]
 
-            $("#myTabPanel").dxTabPanel({
-                dataSource: tabBarItems,
-                titleTemplate: 'title',
-                itemTemplate: 'tab',
-                height: 300,
-                titleTemplate: function (itemData, itemIndex, itemElement) {
-                    itemElement.append("<p>" + itemData.title + "</p>");
-                },
-                itemTemplate: function (itemData, itemIndex, itemElement) {
-                    var wrapper = $('<div style="margin: 25px;">');
-                    wrapper.append("<h1>" + itemData.title + "</h1>");
-                    wrapper.append("<p>&nbsp;</p>");
-                    itemElement.append(wrapper);
-                    var innerWrapper = $('<div style="text-align: left;">');
-                    wrapper.append(innerWrapper);
-                    for (var field in itemData.data)
-                        innerWrapper.append("<p>" + field + ": <b>" + itemData.data[field] + "</b></p>");
-                }
+            //tabbar
+            $("#tabs").dxTabs({
+                dataSource: tabItems
             });
             
-           //LookUp
-            var customLookup = $("#simpleLookUp").dxLookup({
-                items: employees,
-                displayExpr: "FirstName",
-                valueExpr: "ID",
-                cancelButtonText: "Close",
-                popupHeight: 450,
-                popupWidth: 320,
-                animation: {
-                    show: {
-                        type: "fade",
-                        duration: 400,
-                        from: 0.1,
-                        to: 1
-                    },
-                    hide: {
-                        type: "fade",
-                        duration: 400,
-                        from: 1,
-                        to: 0.1
-                    }
-                },
-                title: "Select employee",
-                placeholder: "Select Client",
-                itemTemplate: function (data) {
-                    return "<div class='custom-item'>" + data.Prefix + " " +
-                        data.FirstName + " " + data.LastName + "</div></div>";
-                }
-            }).dxLookup("instance");
+            //LookUp
+
+            //var customLookup = $("#simpleLookUp").dxLookup({
+            //    items: employees,
+            //    displayExpr: "FirstName",
+            //    valueExpr: "ID",
+            //    cancelButtonText: "Close",
+            //    popupHeight: 450,
+            //    popupWidth: 320,
+            //    animation: {
+            //        show: {
+            //            type: "fade",
+            //            duration: 400,
+            //            from: 0.1,
+            //            to: 1
+            //        },
+            //        hide: {
+            //            type: "fade",
+            //            duration: 400,
+            //            from: 1,
+            //            to: 0.1
+            //        }
+            //    },
+            //    title: "Select Client",
+            //    placeholder: "Select Client",
+            //    itemTemplate: function (data) {
+            //        return "<div class='custom-item'>" + data.Prefix + " " +
+            //            data.FirstName + " " + data.LastName + "</div></div>";
+            //    }
+            //}).dxLookup("instance");
+
+            
 
 
         });
@@ -1443,47 +1512,86 @@
                             <p><a href="#">Soccer Field 2</a></p>
                             <p><a href="#">Basketball Court</a></p>
                         </div>
-                        <div class="col-md-6">
-                            <div id="myTabPanel"></div>
-                        </div>
+                        
 
                     </div>
 
-                    
-                    
-                    
                 </div>
                 
             </div>
 
             <!--For Clientes-->
             <div class="container">
+                
                 <div class="row">
-                    <p id="titleCourts"><strong>Clients</strong></p>
-                    <div class="col-md-2">
-                        <ul class="nav nav-pills nav-stacked menu-level-2">
-                            <li><a href="#" data-target-id="courts" id="court">Alejandro Almovodar</a></li>
-                            <li><a href="#" data-target-id="courtProfiles" id="courtProfile">Arturo Ruiz</a></li>
-                            <li><a href="#" data-target-id="services" id="service">Antonia Sanz</a></li>
-                            <li><a href="#" data-target-id="courts" id="court">Juan Perez</a></li>
-                            <li><a href="#" data-target-id="courtProfiles" id="courtProfile">Valentina</a></li>
-                            <li><a href="#" data-target-id="services" id="service">Sebastian</a></li>
+                    
+                    
 
-                        </ul>
+                    <div class="col-md-3">
+                        <p id="titleCourts"><strong>Clients</strong></p>
+                        <!--DataGrid for Clientes-->
+                        <div id="first-name"></div>
                     </div>
 
-                    
-                    <!--LookUp-->
-                    <div class="dx-fieldset col-md-4">
-                        
-                        <div class="dx-field">
-                            <div class="dx-field-value">
-                                <div id="simpleLookUp"></div>
+                    <div class="col-md-5">
+                        <h1><b class="employeeName"></b></h1>
+                        <div id="employees">
+
+                            <b>Email:</b> <span class="birth-date"></span>
+                            <br />
+                            <br />
+
+                            <b>Phone:</b> <span class="mobile-phone"></span>
+                            <br />
+                            <br />
+
+                            <b>Other:</b> <span class="email"></span>
+                            <br />
+                            <br />
+
+                            <b>Address:</b> <span class="address-info"></span>
+                            <br />
+                            <br />
+
+                            <div class="col-md-4">
+                                <b>Client Profile: </b>
                             </div>
+
+                            <div class="col-md-6">
+                                <div id="member-select"></div>
+                            </div>         
+
+                            <div class="col-md-3">
+                                <b>User Credit: </b>
+                                
+                            </div>
+                            <div class="col-md-5">
+                                <div id="creditTextbox"> </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="add"></div>
+                            </div>
+
+
+                            <div class="dx-fieldset">
+                                <div class="dx-field">
+                                    
+                                    
+                                    <br />
+                                    
+                                </div>
+                            </div>
+                                
+                                
+                            
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div id="tabs"></div>
+                    </div>
                 </div>
-            </div>
+                
+                </div>
 
             
 
@@ -1491,28 +1599,13 @@
 
             <!--Load Data controller-->
             <div id="container">
-                <h1>Employee: <b class="employeeName"></b></h1>
+
                 <div class="row">
                     
                     <div class="col-md-6">
                         
 
-                        <div id="employees">
-                            <p>
-                                Birth date: <b class="birth-date"></b>
-                            </p>
-                            <p class="address">
-                                Address:<br />
-                                <b class="city"></b><br />
-                                <span class="zipcode"></span>
-                                <span class="address-info"></span>
-                            </p>
-                            <p>
-                                Phone:
-                                <b class="mobile-phone"></b><br />
-                                Company Name: <b class="email"></b>
-                            </p>
-                        </div>
+                        
                     </div>
 
                     <!--Scheduler-->
