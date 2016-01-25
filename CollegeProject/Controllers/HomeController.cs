@@ -9,27 +9,26 @@ namespace CollegeProject.Controllers
     {
         public ActionResult Index()
         {
-            string url = "http://royalfortunews.azurewebsites.net/api/WN?token=xr9C2x3lhfChA6c01CAh98p85cd";
+            string url = @"http://royalfortunews.azurewebsites.net/api/WN?token=xr9C2x3lhfChA6c01CAh98p85cd";
             string strLine = "";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             request.Accept = "application/json";
             request.ContentType = "application/json; charset=utf-8";
-
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-                if (response.StatusCode == HttpStatusCode.Accepted)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
                     StreamReader st = new StreamReader(response.GetResponseStream());
                     strLine = st.ReadToEnd();
                 }
             }
 
-            Console.Write(strLine);
-
-                return View(strLine);
+            ViewData["Test"] = strLine;
+                return View();
         }
-
+        //Como podemos alimentar en dos direcciones
+        //
 
 
     }

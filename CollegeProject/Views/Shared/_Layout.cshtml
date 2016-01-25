@@ -11,12 +11,15 @@
     <script src="~/Scripts/jquery-1.11.3.min.js"></script>
 
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
-    <script type="text/javascript" src="http://cdn3.devexpress.com/jslib/15.2.4/js/dx.webappjs.js"></script>
+    @*<script type="text/javascript" src="http://cdn3.devexpress.com/jslib/15.2.4/js/dx.webappjs.js"></script>*@
+    <script src="~/Scripts/dx.webappjs.js"></script>
+
     <script src="~/Scripts/dx.chartjs.js"></script>
+    <script src="~/Scripts/dx.all.js"></script>
 
     <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
+    <script src="~/Scripts/App.js"></script>
     <!--StyleSheet for Employee DataGrids-->
     <link href="~/Content/theme.css" rel="stylesheet" />
     <link href="~/Content/Employee.css" rel="stylesheet" />
@@ -26,6 +29,7 @@
     @Styles.Render("~/Content/css")
     <!-- IN TO CA BLE -->
     <script>
+
 
 
         //EmployeeData
@@ -529,6 +533,8 @@
 
         $(function () {
 
+
+
             function logEvent(eventName) {
                 var el = $("#product-details > #eventContainer")
 
@@ -984,6 +990,7 @@
             $("#logInButton").dxButton({
                 text: "Log in",
                 onClick: function () {
+                    
                     $("#popup").dxPopup("instance").show();
                 }
             });
@@ -993,8 +1000,8 @@
                 showTitle: true,
                 title: 'Create a Free Account',
                 dragEnabled: false,
-                width: 500,
-                height: 800,
+                width: 600,
+                height: 600,
                 closeOnOutsideClick: true,
                 onShown: function () {
                     $(function () {
@@ -1022,7 +1029,7 @@
                                 type: 'required'
                             }, {
                                 type: 'pattern',
-                                pattern: '^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$',
+                                pattern: '^[a-zA-Z0-9_]+([a-zA-Z0-9_]+)*$',
                                 message: 'Do not use digits.'
                             }]
                         });
@@ -1127,9 +1134,10 @@
                 views: ["month", "week", "day"],
                 currentView: "day",
                 currentDate: new Date(2015, 4, 25),
+                cellDuration: 30,
                 firstDayOfWeek: 0,
-                startDayHour: 8,
-                endDayHour: 19,
+                startDayHour: 7,
+                endDayHour: 26,
                 cellClick: function (e) {
 
                 },
@@ -1257,6 +1265,10 @@
                         info.cancel = true;
                     }
                 },
+
+                //Como accesar la variable session en los controles de java
+                
+
                 allowColumnReordering: true,
                 showColumnLines: false,
                 showRowLines: false,
@@ -1395,15 +1407,16 @@
             //}).dxLookup("instance");
 
             
-
+            $(".dx-toolbar-item-content").prepend("<p>Hello World</p>");
 
         });
 
     </script>
 </head>
 <body>
+
     <div class="form">
-        <div class="label">Catalog:</div>
+        
         <div id="menu"></div>
         <div id="product-details">
             <div id="name"></div>
@@ -1442,6 +1455,7 @@
             </div>
 
             <div id="popup">
+                Get your courts booked now.  No credit card required.
                 <div id="firstName"></div>
                 <br />
                 <div id="lastName"></div>
@@ -1453,19 +1467,25 @@
                 <div id="buttonCreate"></div>
                 <br />
                 <br />
-                <div id="checkerBox"></div>
+                
                 <div class="dx-field">
-                    <div class="dx-field-label">With overlay</div>
-                    <div class="dx-field-value-static">
-                        <p>
-                            <span id="subject4">Website Re-Design Plan</span>
-                            (<a id="link4">more</a>)
-                        </p>
-                        <div id="popover4">
-                            <div id="selectBox"></div>
-                            <div id="buttonAccept"></div>
-                        </div>
+                    
+                    <div id="checkerBox"></div>
+                    <div class="dx-field-value" id="terms">
+                        I agree to the terms and conditions.
                     </div>
+                    
+                    
+                </div>
+                <br />
+                <br />
+                <p>
+                    <span id="subject4">PopOver</span>
+                    (<a id="link4">more</a>)
+                </p>
+                <div id="popover4">
+                    <div id="selectBox"></div>
+                    <div id="buttonAccept"></div>
                 </div>
             </div>
 
@@ -1619,7 +1639,7 @@
 
             
 
-            <!--Load Data controller-->
+            @*<!--Load Data controller-->
             <div id="container">
 
                 <div class="row">
@@ -1668,7 +1688,7 @@
                     
                 </div>
                 
-            </div>
+            </div>*@
             
             
 

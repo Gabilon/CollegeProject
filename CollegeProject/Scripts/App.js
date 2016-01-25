@@ -1,27 +1,14 @@
-﻿var app = angular.module("myApp", []);
+﻿var data1 = @ViewData["Test"];
+   
 
-app.controller("viewModel", function($scope){
+$(function () {
 
-    $scope.employees = employees;
-    $scope.currentEmployee = {};
-    $scope.visiblePopup = false;
+        
+    $("#grider").dxDataGrid({
+        dataSource: data1,
+        columns: ["GameID"]
 
-    $scope.popupOptions = {
-        width: 300,
-        height: 250,
-        contentTemplate: "info",
-        showTitle: true,
-        title: "Information",
-        dragEnabled: false,
-        closeOnOutsideClick: true,
-        bindingOptions: {
-            visible: "visiblePopup",
-        }
-    };
+    });
 
-    $scope.showInfo = function (data) {
-        $scope.currentEmployee = data.model.employee;
-        $scope.visiblePopup = true;
-    }
 
 });

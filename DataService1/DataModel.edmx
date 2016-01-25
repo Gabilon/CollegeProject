@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="lawyerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GET_CASOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="GET_GASTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="GET_HIJO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="GET_INGRESO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="GET_INICIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="GET_RELACIONES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="LOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="EMAIL" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="device" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SET_INICIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="userID" Type="numeric" Mode="In" />
+          <Parameter Name="Token" Type="numeric" Mode="In" />
+          <Parameter Name="CasoID" Type="numeric" Mode="In" />
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="Value" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SIGN_UP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="TRANS">
+          <Parameter Name="EMAIL" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="registro" Type="nvarchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="lawyerDBModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="lawyerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="lawyerDBEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GET_CASOS" ReturnType="Collection(lawyerDBModel.GET_CASOS_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GET_GASTOS" ReturnType="Collection(lawyerDBModel.GET_GASTOS_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GET_HIJO" ReturnType="Collection(lawyerDBModel.GET_HIJO_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GET_INGRESO" ReturnType="Collection(lawyerDBModel.GET_INGRESO_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GET_INICIO" ReturnType="Collection(lawyerDBModel.GET_INICIO_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GET_RELACIONES" ReturnType="Collection(lawyerDBModel.GET_RELACIONES_Result)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="LOGIN" ReturnType="Collection(lawyerDBModel.LOGIN_Result)">
+            <Parameter Name="EMAIL" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="device" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SET_INICIO" ReturnType="Collection(String)">
+            <Parameter Name="userID" Mode="In" Type="Decimal" />
+            <Parameter Name="Token" Mode="In" Type="Decimal" />
+            <Parameter Name="CasoID" Mode="In" Type="Decimal" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="Value" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SIGN_UP" ReturnType="Collection(lawyerDBModel.SIGN_UP_Result)">
+            <Parameter Name="EMAIL" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="registro" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GET_CASOS_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="Decimal" Name="CasoID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Caso_Name" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Caso_Type" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Caso_Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UserAccess" Nullable="true" MaxLength="3" />
+        </ComplexType>
+        <ComplexType Name="GET_GASTOS_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="Decimal" Name="GastosID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="AlimID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="AlimName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Tipo_Gasto" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Categoria" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="cantidad" Nullable="true" Precision="19" />
+          <Property Type="Boolean" Name="Edited" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+          <Property Type="Boolean" Name="Added" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GET_HIJO_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="Decimal" Name="AlimID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="DOB" Nullable="true" />
+          <Property Type="Boolean" Name="Edited" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+          <Property Type="Boolean" Name="Added" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GET_INGRESO_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="Decimal" Name="IngresoID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Parte" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Periodo" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Bruto" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Deducciones" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="BaseMensual" Nullable="true" Precision="19" />
+          <Property Type="Boolean" Name="Edited" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+          <Property Type="Boolean" Name="Added" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GET_INICIO_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Value" Nullable="true" />
+          <Property Type="Boolean" Name="Is_Editable" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GET_RELACIONES_Result">
+          <Property Type="String" Name="Mensaje" Nullable="true" />
+          <Property Type="Decimal" Name="AjusteID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="AlimID" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="AlimName" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="TotalHours" Nullable="true" />
+          <Property Type="String" Name="periodo" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Entrega_Day" Nullable="true" MaxLength="10" />
+          <Property Type="Time" Name="Entrega_Time" Nullable="true" />
+          <Property Type="String" Name="Recogido_Day" Nullable="true" MaxLength="10" />
+          <Property Type="Time" Name="Recogido_time" Nullable="true" />
+          <Property Type="Binary" Name="MONTHS" Nullable="true" MaxLength="2" />
+          <Property Type="Binary" Name="DAYS" Nullable="true" MaxLength="1" />
+          <Property Type="Boolean" Name="Edited" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+          <Property Type="Boolean" Name="Added" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="LOGIN_Result">
+          <Property Type="String" Name="message" Nullable="true" />
+          <Property Type="Decimal" Name="token" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="SIGN_UP_Result">
+          <Property Type="String" Name="message" Nullable="true" />
+          <Property Type="Decimal" Name="UserID" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="lawyerDBModelStoreContainer" CdmEntityContainer="lawyerDBEntities" >
+          <FunctionImportMapping FunctionImportName="GET_CASOS" FunctionName="lawyerDBModel.Store.GET_CASOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_CASOS_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="CasoID" ColumnName="CasoID" />
+                <ScalarProperty Name="Caso_Name" ColumnName="Caso Name" />
+                <ScalarProperty Name="Caso_Type" ColumnName="Caso_Type" />
+                <ScalarProperty Name="Caso_Status" ColumnName="Caso Status" />
+                <ScalarProperty Name="UserAccess" ColumnName="UserAccess" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_GASTOS" FunctionName="lawyerDBModel.Store.GET_GASTOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_GASTOS_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="GastosID" ColumnName="GastosID" />
+                <ScalarProperty Name="AlimID" ColumnName="AlimID" />
+                <ScalarProperty Name="AlimName" ColumnName="AlimName" />
+                <ScalarProperty Name="Tipo_Gasto" ColumnName="Tipo_Gasto" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="Edited" ColumnName="Edited" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="Added" ColumnName="Added" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_HIJO" FunctionName="lawyerDBModel.Store.GET_HIJO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_HIJO_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="AlimID" ColumnName="AlimID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Edited" ColumnName="Edited" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="Added" ColumnName="Added" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_INGRESO" FunctionName="lawyerDBModel.Store.GET_INGRESO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_INGRESO_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="IngresoID" ColumnName="IngresoID" />
+                <ScalarProperty Name="Parte" ColumnName="Parte" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Bruto" ColumnName="Bruto" />
+                <ScalarProperty Name="Deducciones" ColumnName="Deducciones" />
+                <ScalarProperty Name="BaseMensual" ColumnName="BaseMensual" />
+                <ScalarProperty Name="Edited" ColumnName="Edited" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="Added" ColumnName="Added" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_INICIO" FunctionName="lawyerDBModel.Store.GET_INICIO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_INICIO_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Is_Editable" ColumnName="Is_Editable" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_RELACIONES" FunctionName="lawyerDBModel.Store.GET_RELACIONES">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.GET_RELACIONES_Result">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="AjusteID" ColumnName="AjusteID" />
+                <ScalarProperty Name="AlimID" ColumnName="AlimID" />
+                <ScalarProperty Name="AlimName" ColumnName="AlimName" />
+                <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="Entrega_Day" ColumnName="Entrega_Day" />
+                <ScalarProperty Name="Entrega_Time" ColumnName="Entrega_Time" />
+                <ScalarProperty Name="Recogido_Day" ColumnName="Recogido_Day" />
+                <ScalarProperty Name="Recogido_time" ColumnName="Recogido_time" />
+                <ScalarProperty Name="MONTHS" ColumnName="MONTHS" />
+                <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+                <ScalarProperty Name="Edited" ColumnName="Edited" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="Added" ColumnName="Added" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LOGIN" FunctionName="lawyerDBModel.Store.LOGIN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.LOGIN_Result">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="token" ColumnName="token" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SET_INICIO" FunctionName="lawyerDBModel.Store.SET_INICIO" />
+          <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="lawyerDBModel.Store.SIGN_UP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="lawyerDBModel.SIGN_UP_Result">
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
